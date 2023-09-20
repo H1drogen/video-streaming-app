@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New User Registration</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<h1>Registration Form</h1>
+	<form action="#" th:action="@{/SaveUser}" th:object="${user}" method="post">
+		<table>
+		<tbody>
+				<tr>
+					<td>
+						<label class="form-label" for="firstName">First Name: </label>
+					</td>
+					<td>
+						<input class="form-control" type="text" th:field="*{firstName}" id="firstName" placeholder="firstName">
+						<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="form-label" for="lastName">Last Name: </label>
+					</td>
+					<td>
+						<input class="form-control" type="text" th:field="*{lastName}" id="lastName" placeholder="lastName">
+						<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="form-label" for="email">Email: </label>
+					</td>
+					<td>
+						<input class="form-control" type="text" th:field="*{email}" id="email" placeholder="email">
+						<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red" />
+						
+					</td>
+				</tr>
+				<tr class="datePicker">
+					<td>
+						<label class="form-label" for="dateOfBirth">Date of Birth: </label>
+					</td>
+					
+					<td>
+						<input class="form-control" type="date" th:field="*{dateOfBirth}" id="dateOfBirth" placeholder="dd-MM-yyyy">
+						<p th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="form-label" for="accountType">Account Type: </label>
+					</td>
+					<td>
+					<p></p>
+					<select class="form-control" th:field="*{accountType}">
+    					<option th:value="'Admin'" th:text="Admin"></option>
+    					<option th:value="'basic'" th:text="Basic"></option>
+    					<option th:value="'premium'" th:text="premium"></option>
+    					<option th:value="'trial'" th:text="trial"></option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+				
+					<td>
+						<label for="username">Username: </label>
+					</td>
+					<td>
+						<input class="form-control"  type="text" th:field="*{username}" id="username" placeholder="username">
+						<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="password">Password: </label>
+					</td>
+					<td>
+						<input class="form-control"  type="text" th:field="*{password}" id="password" placeholder="password">
+						<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="btn btn-primary mb-3" type="submit" value="Register User">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

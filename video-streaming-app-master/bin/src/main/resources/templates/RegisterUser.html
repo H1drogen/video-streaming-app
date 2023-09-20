@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New User Registration</title>
+</head>
+<body>
+<h1></h1>
+	<form action="#" th:action="@{/SaveUser}" th:object="${user}" method="post">
+		<table>
+		<tbody>
+				<tr>
+					<td>
+						<label for="firstName">firstName: </label>
+					</td>
+					<td>
+						<input type="text" th:field="*{firstName}" id="firstName" placeholder="firstName">
+						<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="lastName">Last Name: </label>
+					</td>
+					<td>
+						<input type="text" th:field="*{lastName}" id="lastName" placeholder="lastName">
+						<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="email">Email: </label>
+					</td>
+					<td>
+						<input type="text" th:field="*{email}" id="email" placeholder="email">
+						<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red" />
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="dateOfBirth">dateOfBirth: </label>
+					</td>
+					
+					<td>
+						<input type="date" th:field="*{dateOfBirth}" id="dateOfBirth" placeholder="dd-MM-yyyy">
+						<p th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="accountType">accountType: </label>
+					</td>
+					<td>
+					<select th:field="*{accountType}">
+    					<option th:value="'Admin'" th:text="Admin"></option>
+    					<option th:value="'basic'" th:text="Basic"></option>
+    					<option th:value="'premium'" th:text="premium"></option>
+    					<option th:value="'trial'" th:text="trial"></option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="username">User name: </label>
+					</td>
+					<td>
+						<input type="text" th:field="*{username}" id="username" placeholder="username">
+						<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="password">Password: </label>
+					</td>
+					<td>
+						<input type="text" th:field="*{password}" id="password" placeholder="password">
+						<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" value="RegisterUser">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>
