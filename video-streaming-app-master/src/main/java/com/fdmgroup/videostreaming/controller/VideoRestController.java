@@ -23,36 +23,28 @@ import com.fdmgroup.videostreaming.service.VideoService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("video")
+@RequestMapping("video/")
 public class VideoRestController {
 
 	private VideoService videoService;
+	
+	@PostMapping()
+	public ResponseEntity<String> saveVideo(@RequestParam("file") MultipartFile file, @RequestParam("title") String title, @RequestParam("description") String description, @RequestParam("creator") String creator, @RequestParam("creationDate") LocalDate creationDate) throws IOException {
+		videoService.saveVideo(file, title, description, creator, creationDate);
+		return ResponseEntity.ok("Video saved successfully.");
+	}
 
-
+	@GetMapping("{title}")
+	public ResponseEntity<ByteArrayResource> getVideoByTitle(@PathVariable("title") String title){
+	return ResponseEntity.ok(new ByteArrayResource(videoService.getVideo(title).getData()));
+	Video(String title, String description, String creator, LocalDateTime creationDate, byte[] data) 
 	
+	}
 	
-	
-		
-	
-	
-	
-//	@PostMapping()
-//	public ResponseEntity<String> saveVideo(@RequestParam("file") MultipartFile file, @RequestParam("title") String title, @RequestParam("description") String description, @RequestParam("creator") String creator, @RequestParam("creationDate") LocalDate creationDate) throws IOException {
-//		videoService.saveVideo(file, title, description, creator, creationDate);
-//		return ResponseEntity.ok("Video saved successfully.");
-//	}
-//
-//	@GetMapping("{title}")
-//	public ResponseEntity<ByteArrayResource> getVideoByTitle(@PathVariable("title") String title){
-//	return ResponseEntity.ok(new ByteArrayResource(videoService.getVideo(title).getData()));
-//	// Video(String title, String description, String creator, LocalDateTime creationDate, byte[] data) 
-//	
-//}
-//	
-//	@GetMapping("all")
-//	public ResponseEntity<List<String>> getAllVideoNames(){
-//		return ResponseEntity.ok(videoService.getAllVideoNames());
-//	}
+	@GetMapping("all")
+	public ResponseEntity<List<String>> getAllVideoNames(){
+		return ResponseEntity.ok(videoService.getAllVideoNames());
+	}
 	
 	
 	
