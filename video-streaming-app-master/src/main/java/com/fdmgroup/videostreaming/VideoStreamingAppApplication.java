@@ -12,18 +12,6 @@ import com.fdmgroup.videostreaming.model.Video;
 import com.fdmgroup.videostreaming.service.UserService;
 import com.fdmgroup.videostreaming.service.VideoService;
 
-//MESUT - This is a comment for you to read, dont mark us down for this!
-
-	/*Our repository tests were not working and the error was due to this class
-	
-	It no longer implements CommandLineRunner
-	
-	I have commented out the autowired, and the run method 
-	so that you can see it and understand. 
-	the database no longer populates on startup, all videos have to be added through AddVideo
-	but the test ALL pass now
-	*/
-
 @SpringBootApplication
 public class VideoStreamingAppApplication {
 
@@ -35,9 +23,7 @@ public class VideoStreamingAppApplication {
 		SpringApplication.run(VideoStreamingAppApplication.class, args);
 		
 	}
-
 	
-//	
 //	public void run(String...args) throws Exception {
 //		
 //		Video newvideo = new Video();
@@ -75,7 +61,7 @@ public class VideoStreamingAppApplication {
 //		newvideo6.setVideoUrl("https://youtube.com/embed/POe9SOEKotk");
 //		newvideo6.setDescription("obsessed with this. watched it 10 times");
 //		this.videoService.saveVideo(newvideo6);
-//	}
+	}
 
 }
 
