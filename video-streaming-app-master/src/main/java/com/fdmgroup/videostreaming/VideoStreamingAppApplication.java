@@ -63,6 +63,4 @@ public class VideoStreamingAppApplication {
 //		this.videoService.saveVideo(newvideo6);
 	}
 
-}
-
 
