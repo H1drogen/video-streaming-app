@@ -20,5 +20,3 @@ This project aims to provide a platform for users to stream and watch videos sea
     JUnit: For unit testing.
     Maven: Dependency management and project build tool.
     Git: Version control system, utilized through GitHub for collaboration.
-
-# Screenshots
