@@ -48,5 +48,17 @@ public class Video {
 		this.description = description;
 		
 	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getVideoUrl() {
+		return videoUrl;
+	}
+
+	public String getDescription() {
+		return description;
+	}
 	
 }
