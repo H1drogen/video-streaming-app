@@ -15,7 +15,6 @@ import com.fdmgroup.videostreaming.service.VideoService;
 @SpringBootApplication
 public class VideoStreamingAppApplication {
 
-
 //	@Autowired
 //	private VideoService videoService;
 
