@@ -2,6 +2,21 @@
 
 This project aims to provide a platform for users to stream and watch videos seamlessly. Leveraging the power of Spring Boot, this application offers a robust solution for video content delivery.
 
+
+## Running the app
+
+### Prerequisites
+- Java 17
+- Maven
+
+### Start the application
+From the project root, run:
+
+```bash
+mvn spring-boot:run
+
+
+
 # Features
 
     User Authentication: Users can create accounts, log in securely, and manage their profiles.
