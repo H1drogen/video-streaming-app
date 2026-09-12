@@ -14,8 +14,7 @@ From the project root, run:
 
 ```bash
 mvn spring-boot:run
-
-
+```
 
 # Features
 
